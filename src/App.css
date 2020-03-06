@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+#current-state {
+  font-size: 2em;
+  color: red;
+}
