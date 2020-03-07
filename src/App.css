@@ -1,6 +1,8 @@
 body {
   background-color: #f4eea9;
   display: flex;
+  height: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -9,7 +11,7 @@ body {
   text-align: center;
   background-color: white;
   border-radius: 10px;
-  border: 3px solid #f4afab;
+  border: 3px solid #fbacbe;
   min-width: 300px;
   padding: 2%;
   margin: 50px;
@@ -17,14 +19,8 @@ body {
 
 #current-state {
   font-family: 'Kalam', cursive;
-  font-size: 2em;
+  font-size: 3em;
   color: #102542;
-}
-
-#letters-guessed {
-}
-
-#image {
 }
 
 #show-msg,
@@ -35,13 +31,40 @@ body {
 #title {
   font-family: 'Amatic SC', cursive;
   margin: 0%;
+  color: #fbacbe;
 }
 
 button {
   font-family: 'Amatic SC', cursive;
   font-size: 1.5em;
+  display: inline-block;
+  margin: 3px;
+  border-radius: 3px;
+  background-color: #f4afab;
+  color: white;
+  font-weight: bold;
 }
-/* font-family: 'Shadows Into Light', cursive;
-font-family: 'Indie Flower', cursive;
-font-family: 'Pacifico', cursive;
-font-family: 'Amatic SC', cursive; */
+
+#celebration {
+  font-weight: bold;
+  padding: 15px;
+  font-size: 1.5em;
+  color: #102542;
+  font-family: 'Kalam', cursive;
+}
+
+p {
+  margin: 10px;
+}
+
+footer,
+footer a {
+  color: #fbacbe;
+  text-decoration: none;
+  font-family: 'Times New Roman', cursive;
+  padding: 0rem 0.2rem;
+}
+footer a:hover {
+  color: #fbacbe;
+  text-decoration: none;
+}

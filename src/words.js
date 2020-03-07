@@ -1,17 +1,4 @@
 const words = {
-  hu: {
-    languageName: 'Hungarian',
-    emoji: '🇭🇺',
-    title: 'Akasztófa',
-    guessesLeft: ['Még ', ' próbálkozásod maradt.'],
-    newGame: 'Kezdj új játékot:',
-    level: ['könnyű', 'közepes', 'nehéz'],
-    won: 'Nyertél! Itt a nyereményed: 🍌',
-    lost: 'Sajnálom, vesztettél. 😕',
-    easy: ['alma', 'paprika', 'virág', 'asztal', 'szerelem'],
-    medium: ['palacsinta', 'paprikajancsi', 'hógolyó'],
-    hard: ['egészség', 'boldogság', 'becsület', 'édesanya']
-  },
   en: {
     languageName: 'English',
     emoji: '🇬🇧',
@@ -21,9 +8,46 @@ const words = {
     level: ['easy', 'normal', 'hard'],
     won: "You won! Here's your prize: 🍌",
     lost: 'Sorry, you lost. 😕',
-    easy: ['banana', 'potato', 'apple', 'cookie', 'flower'],
-    medium: ['policeman', 'hocuspocus', 'plant'],
-    hard: ['awkward', 'flapjack', 'cobweb']
+    easy: ['women', 'support', 'love', 'respect', 'passion', 'kindness'],
+    medium: [
+      'equality',
+      'courage',
+      'grace',
+      'strong',
+      'empowerment',
+      'inspire'
+    ],
+    hard: ['independence', 'strength', 'celebration', 'thriving', 'courageous'],
+    msg: "Happy International Women's Day"
+  },
+  hu: {
+    languageName: 'Hungarian',
+    emoji: '🇭🇺',
+    title: 'Akasztófa',
+    guessesLeft: ['Még ', ' próbálkozásod maradt.'],
+    newGame: 'Kezdj új játékot:',
+    level: ['könnyű', 'közepes', 'nehéz'],
+    won: 'Nyertél! Itt a nyereményed: 🍌',
+    lost: 'Sajnálom, vesztettél. 😕',
+    easy: ['szeretet', 'kedves', 'bátorság', 'boldogság'],
+    medium: [
+      'erő',
+      'tehetség',
+      'tisztelet',
+      'támogatás',
+      'inspirál',
+      'szenvedély'
+    ],
+    hard: [
+      'nők',
+      'egyenlőség',
+      'függetlenség',
+      'ünneplés',
+      'kitartás',
+      'bátorítás',
+      'összetartás'
+    ],
+    msg: 'Boldog Nemzetközi Nőnapot'
   }
 };
 

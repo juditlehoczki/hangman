@@ -5,6 +5,7 @@ import Image from './Image.js';
 import LanguageSelector from './LanguageSelector.js';
 import Word from './Word.js';
 import Buttons from './Buttons.js';
+import Footer from './Footer.js';
 
 class App extends React.Component {
   state = {
@@ -87,8 +88,9 @@ class App extends React.Component {
         <p id="letters-guessed">{this.state.letters}</p>
         <Image guessesLeft={this.state.guessesLeft} />
         <p id="show-msg">{this.showMsg()}</p>
-        <p id="start-new-game">{words[this.state.language].newGame}</p>
         <Buttons language={this.state.language} newGame={this.newGame} />
+        <p id="celebration">{words[this.state.language].msg} 🌼 2020</p>
+        <Footer />
       </div>
     );
   }
