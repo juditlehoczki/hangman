@@ -50,7 +50,7 @@ class App extends React.Component {
   newGame = level => {
     const newWord =
       words[this.state.language][level][
-        Math.floor(Math.random() * words.en[level].length)
+        Math.floor(Math.random() * words[this.state.language][level].length)
       ];
     console.log(newWord);
     this.setState({
@@ -66,14 +66,14 @@ class App extends React.Component {
         return { language: lang };
       },
       () => {
-        this.newGame('easy');
+        this.newGame('normal');
       }
     );
   };
 
   componentDidMount() {
     document.addEventListener('keypress', this.handleKeyPress);
-    this.newGame('easy');
+    this.newGame('normal');
   }
 
   render() {

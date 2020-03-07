@@ -2,7 +2,7 @@ import React from 'react';
 import words from './words.js';
 
 const Buttons = props => {
-  return ['easy', 'medium', 'hard'].map((level, index) => {
+  return ['easy', 'normal', 'hard'].map((level, index) => {
     return (
       <button
         key={level}

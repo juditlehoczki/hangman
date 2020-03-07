@@ -9,7 +9,7 @@ const words = {
     won: "You won! Here's your prize: 🍌",
     lost: 'Sorry, you lost. 😕',
     easy: ['women', 'support', 'love', 'respect', 'passion', 'kindness'],
-    medium: [
+    normal: [
       'equality',
       'courage',
       'grace',
@@ -30,7 +30,7 @@ const words = {
     won: 'Nyertél! Itt a nyereményed: 🍌',
     lost: 'Sajnálom, vesztettél. 😕',
     easy: ['szeretet', 'kedves', 'bátorság', 'boldogság'],
-    medium: [
+    normal: [
       'erő',
       'tehetség',
       'tisztelet',
