@@ -23,6 +23,7 @@ const images = {
   8: img8,
   9: img9
 };
+
 class App extends React.Component {
   state = {
     currentWord: 'banana',
@@ -32,14 +33,16 @@ class App extends React.Component {
 
   handleKeyPress = event => {
     this.setState(currentState => {
-      const newState = {};
-      if (!currentState.letters.includes(event.key.toUpperCase())) {
-        newState.letters = [...currentState.letters, event.key.toUpperCase()];
-        if (!currentState.currentWord.includes(event.key)) {
-          newState.guessesLeft = currentState.guessesLeft - 1;
+      if (currentState.guessesLeft > 0) {
+        const newState = {};
+        if (!currentState.letters.includes(event.key.toUpperCase())) {
+          newState.letters = [...currentState.letters, event.key.toUpperCase()];
+          if (!currentState.currentWord.includes(event.key)) {
+            newState.guessesLeft = currentState.guessesLeft - 1;
+          }
         }
+        return newState;
       }
-      return newState;
     });
   };
 
@@ -75,6 +78,21 @@ class App extends React.Component {
     }
   };
 
+  showMsg = () => {
+    if (
+      this.state.currentWord
+        .toUpperCase()
+        .split('')
+        .every(letter => this.state.letters.includes(letter))
+    ) {
+      return "You won! Here's your prize: 🍌";
+    } else if (this.state.guessesLeft > 0) {
+      return `You have ${this.state.guessesLeft} guesses left.`;
+    } else {
+      return 'Sorry, you lost. 😕';
+    }
+  };
+
   componentDidMount() {
     document.addEventListener('keypress', this.handleKeyPress);
   }
@@ -86,7 +104,7 @@ class App extends React.Component {
         <p id="current-state">{this.showCurrentState()}</p>
         <p id="letters-guessed">{this.state.letters}</p>
         <p id="image">{this.showImage()}</p>
-        <p>winner or looser</p>
+        <p id="show-msg">{this.showMsg()}</p>
       </div>
     );
   }
