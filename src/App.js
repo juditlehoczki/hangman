@@ -1,34 +1,17 @@
 import React from 'react';
 import './App.css';
-import img9 from './img/9.png';
-import img8 from './img/8.png';
-import img7 from './img/7.png';
-import img6 from './img/6.png';
-import img5 from './img/5.png';
-import img4 from './img/4.png';
-import img3 from './img/3.png';
-import img2 from './img/2.png';
-import img1 from './img/1.png';
-import img0 from './img/0.png';
-
-const images = {
-  0: img0,
-  1: img1,
-  2: img2,
-  3: img3,
-  4: img4,
-  5: img5,
-  6: img6,
-  7: img7,
-  8: img8,
-  9: img9
-};
+import words from './words.js';
+import Image from './Image.js';
+import LanguageSelector from './LanguageSelector.js';
+import Word from './Word.js';
+import Buttons from './Buttons.js';
 
 class App extends React.Component {
   state = {
-    currentWord: 'banana',
+    currentWord: '',
     letters: [],
-    guessesLeft: 9
+    guessesLeft: 9,
+    language: 'en'
   };
 
   handleKeyPress = event => {
@@ -46,38 +29,6 @@ class App extends React.Component {
     });
   };
 
-  showCurrentState = () => {
-    let currentState = '';
-    for (let i = 0; i < this.state.currentWord.length; i++) {
-      if (
-        this.state.letters.includes(this.state.currentWord[i].toUpperCase())
-      ) {
-        currentState = currentState.concat(
-          this.state.currentWord[i].toUpperCase()
-        );
-      } else {
-        currentState = currentState.concat('_');
-      }
-    }
-    return currentState
-      .split('')
-      .join(' ')
-      .toUpperCase();
-  };
-
-  showImage = () => {
-    if (this.state.guessesLeft >= 0) {
-      return (
-        <img
-          src={images[this.state.guessesLeft]}
-          alt="current state of hangman"
-        />
-      );
-    } else {
-      return <img src={images[0]} alt="current state of hangman" />;
-    }
-  };
-
   showMsg = () => {
     if (
       this.state.currentWord
@@ -85,26 +36,59 @@ class App extends React.Component {
         .split('')
         .every(letter => this.state.letters.includes(letter))
     ) {
-      return "You won! Here's your prize: 🍌";
+      return words[this.state.language].won;
     } else if (this.state.guessesLeft > 0) {
-      return `You have ${this.state.guessesLeft} guesses left.`;
+      return `${words[this.state.language].guessesLeft[0]} ${
+        this.state.guessesLeft
+      } ${words[this.state.language].guessesLeft[1]}`;
     } else {
-      return 'Sorry, you lost. 😕';
+      return words[this.state.language].lost;
     }
+  };
+
+  newGame = level => {
+    const newWord =
+      words[this.state.language][level][
+        Math.floor(Math.random() * words.en[level].length)
+      ];
+    console.log(newWord);
+    this.setState({
+      currentWord: newWord,
+      letters: [],
+      guessesLeft: 9
+    });
+  };
+
+  changeLanguage = lang => {
+    this.setState(
+      currentState => {
+        return { language: lang };
+      },
+      () => {
+        this.newGame('easy');
+      }
+    );
   };
 
   componentDidMount() {
     document.addEventListener('keypress', this.handleKeyPress);
+    this.newGame('easy');
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Hangman</h1>
-        <p id="current-state">{this.showCurrentState()}</p>
+        <LanguageSelector changeLanguage={this.changeLanguage} />
+        <h1 id="title">{words[this.state.language].title}</h1>
+        <Word
+          currentWord={this.state.currentWord}
+          letters={this.state.letters}
+        />
         <p id="letters-guessed">{this.state.letters}</p>
-        <p id="image">{this.showImage()}</p>
+        <Image guessesLeft={this.state.guessesLeft} />
         <p id="show-msg">{this.showMsg()}</p>
+        <p id="start-new-game">{words[this.state.language].newGame}</p>
+        <Buttons language={this.state.language} newGame={this.newGame} />
       </div>
     );
   }

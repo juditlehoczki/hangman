@@ -10,12 +10,38 @@ body {
   background-color: white;
   border-radius: 10px;
   border: 3px solid #f4afab;
-  width: 300px;
-  padding: 5%;
+  min-width: 300px;
+  padding: 2%;
   margin: 50px;
 }
 
 #current-state {
+  font-family: 'Kalam', cursive;
   font-size: 2em;
   color: #102542;
 }
+
+#letters-guessed {
+}
+
+#image {
+}
+
+#show-msg,
+#start-new-game {
+  font-family: 'Kalam', cursive;
+}
+
+#title {
+  font-family: 'Amatic SC', cursive;
+  margin: 0%;
+}
+
+button {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+}
+/* font-family: 'Shadows Into Light', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Amatic SC', cursive; */

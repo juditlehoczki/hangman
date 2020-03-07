@@ -9,3 +9,9 @@ This is a baby project of mine that I created while learning React. It is the cl
 - [React](https://reactjs.org/)
 
 ### Installation
+
+### Future Work
+
+- add a visual keyboard
+- add word categories to choose from
+- add tests
