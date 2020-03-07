@@ -1,8 +1,21 @@
-.App {
+body {
+  background-color: #f4eea9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
   text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 3px solid #f4afab;
+  width: 300px;
+  padding: 5%;
+  margin: 50px;
 }
 
 #current-state {
   font-size: 2em;
-  color: red;
+  color: #102542;
 }
