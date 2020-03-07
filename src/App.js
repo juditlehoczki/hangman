@@ -52,7 +52,6 @@ class App extends React.Component {
       words[this.state.language][level][
         Math.floor(Math.random() * words[this.state.language][level].length)
       ];
-    console.log(newWord);
     this.setState({
       currentWord: newWord,
       letters: [],
