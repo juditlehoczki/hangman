@@ -23,7 +23,11 @@ body {
   color: #102542;
 }
 
-#show-msg,
+#show-msg {
+  font-family: 'Kalam', cursive;
+  font-size: 1.5em;
+}
+
 #start-new-game {
   font-family: 'Kalam', cursive;
 }
