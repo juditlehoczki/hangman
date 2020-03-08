@@ -5,7 +5,7 @@ The game is available to play [here](https://friendly-elion-692a1c.netlify.com/)
 
 ## Download
 
-- Clone the repository to your computer
+- Fork and clone the repository to your computer
 - `yarn install`
 - `yarn start`
   - Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
